@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+        <h2>TheBookProject</h2>
+    </header>
+    <main>
+      <div class="buttonWrapper">
+        <button id="addBookBtnJs" class="addBookBtn ">
+        <h3>Add Book</h3>
+      </button>
+      </div>
+    </main>
+        <div id="modalWindowJs" class="modalWindow hidden">
+          <form id="addBookFormJs" class="addBookForm">
+            <h3>Add a new book</h3>
+            <input
+              class="input"
+              type="text"
+              id="titleJs"
+              placeholder="Title"
+              required
+              maxlength="100"
+            />
+            <input
+              class="input"
+              type="text"
+              id="authorJs"
+              placeholder="Author"
+              required
+              maxlength="100"
+            />
+            <input
+              class="input"
+              type="number"
+              id="pagesJs"
+              placeholder="Pages"
+              required
+              max="10000"
+            />
+              <div class="isBookRead">
+            <label for="isBookRead">Have you read it?</label>
+            <input class="checkbox" type="checkbox" id="isBookReadJs" />
+          </div>
+          <button id ="submitBookBtnJs"class="submitBookBtn" type="submit">Submit</button>
+          </div>
+                              <div class="grid">
+            <div id="bookWrapperJs" class="bookWrapper"></div>
+          </div>
+    <script src="/app.js"></script>
+  </body>
+</html>
