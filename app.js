@@ -32,6 +32,7 @@ submitBookBtn.addEventListener('click', function (event) {
     const bookTitle = document.getElementById('titleJs')
     const bookAuthor = document.getElementById('authorJs')
     const bookPages = document.getElementById('pagesJs')
+    const isBookRead = document.getElementById('isBookReadJs')
 
     let library = []
 
@@ -39,12 +40,14 @@ submitBookBtn.addEventListener('click', function (event) {
       bookTitle: bookTitle.value,
       bookAuthor: bookAuthor.value,
       bookPages: bookPages.value,
+      isRead: isBookRead.value,
     }
+    let read = book.isRead.value
+
+    console.log(read)
     library.push(book)
 
     bookWrapperjs.innerHTML = ''
-
-    JSON.stringify(library)
 
     library.forEach((element) => {
       const html = `
@@ -54,7 +57,6 @@ submitBookBtn.addEventListener('click', function (event) {
         <h3>Pages : ${book.bookPages}</h3>
         </div>
         `
-
       bookWrapperjs.insertAdjacentHTML('afterend', html)
     })
   }
