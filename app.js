@@ -1,65 +1,29 @@
-const addBookBtn = document.getElementById('addBookBtnJs')
-const modalWindow = document.getElementById('modalWindowJs')
-const submitBookBtn = document.getElementById('submitBookBtnJs')
-const bookWrapperjs = document.getElementById('bookWrapperJs')
+const addBookBtn = document.getElementById("addBookBtnJs");
+const modalWindow = document.getElementById("modalWindowJs");
+const submitBookBtn = document.getElementById("submitBookBtnJs");
+const bookWrapperjs = document.getElementById("bookWrapperJs");
 
-let library = []
+addBookBtn.addEventListener("click", modalDisplay);
+submitBookBtn.addEventListener("click", submitBook);
 
-//
-//
-function makeModalVisible(event) {
-  event.preventDefault()
-  if ((modalWindow.classList.contains = 'hidden')) {
-    modalWindow.classList.remove('hidden')
-    addBookBtn.classList.add('hidden')
-  } else console.log('error')
+function modalDisplay() {
+  if (modalWindow.classList.contains("hidden")) {
+    modalWindow.classList.remove("hidden");
+  } else {
+    modalWindow.classList.add("hidden");
+  }
 }
-addBookBtn.addEventListener('click', makeModalVisible)
-//
-//
-submitBookBtn.addEventListener('click', function (event) {
-  event.preventDefault()
-  if ((addBookBtn.classList.contains = 'hidden')) {
-    modalWindow.classList.add('hidden')
-    addBookBtn.classList.remove('hidden')
+function submitBook() {
+  if (modalWindow.classList.contains("modalWindow")) {
+    modalWindow.classList.add("hidden");
   }
-  //
-  //
-  else console.log('error')
-  //
-  //
-  function getUserInput() {
-    const bookTitle = document.getElementById('titleJs')
-    const bookAuthor = document.getElementById('authorJs')
-    const bookPages = document.getElementById('pagesJs')
-    const isBookRead = document.getElementById('isBookReadJs')
+  function getBookData() {
+    const bookTitle = document.getElementById("titleJs");
+    const bookAuthor = document.getElementById("authorJs");
+    const bookPages = document.getElementById("pagesJs");
+    const isBookRead = document.getElementById("isBookReadJs");
 
-    let library = []
-
-    const book = {
-      bookTitle: bookTitle.value,
-      bookAuthor: bookAuthor.value,
-      bookPages: bookPages.value,
-      isRead: isBookRead.value,
-    }
-    let read = book.isRead.value
-
-    console.log(read)
-    library.push(book)
-
-    bookWrapperjs.innerHTML = ''
-
-    library.forEach((element) => {
-      const html = `
-        <div class='book '>
-        <h1>Title : ${book.bookTitle}</h1>
-        <h2>Author : ${book.bookTitle}</h2>
-        <h3>Pages : ${book.bookPages}</h3>
-        </div>
-        `
-      bookWrapperjs.insertAdjacentHTML('afterend', html)
-    })
+    console.log(bookTitle, bookAuthor, bookPages, isBookRead);
   }
-  localStorage.setItem('library', JSON.stringify(library))
-  getUserInput()
-})
+  getBookData();
+}
